@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Text-Utilities</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h3 class="text-start mt-3 bg-light h-2">Type Your Text Here</h3>
+        <form action="/analyzer" method="post">{% csrf_token %}
+            <textarea name="text" class="form-control mt-5" rows="5"></textarea><br />
+            <div class="form-check form-switch">
+                <input type="checkbox" name="rpunc" class="form-check-input" /> Remove-Punctuations<br />
+            </div>
+            <div class="form-check form-switch">
+                <input type="checkbox" name="capitalize" class="form-check-input" /> Capitalize<br />
+            </div>
+            <div class="form-check form-switch">
+                <input type="checkbox" name="rspace" class="form-check-input" /> Remove-Extra-Spaces<br />
+            </div>
+            <input type="submit" value="Analyze Text" class="btn btn-primary mt-3" />
+        </form>
+    </div>
+</body>
+</html>
